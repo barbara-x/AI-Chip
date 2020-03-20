@@ -12,6 +12,8 @@
 
 <font color="Darkred">
 <ul>
+<li>Add news of <a href="#Mobileye">Mobileye</a> and <a href="#Mobileye">Mobileye</a>.</li>
+智慧城市 | 英国地理测绘局与Mobileye合作创建数据采集新模式
 <li>Add startup <a href="#Furiosa">Furiosa AI</a>.</li>
 <li>Add news of <a href="#Graphcore">Graphcore</a> and <a href="#SambaNova">SambaNova</a>.</li>
 <li>Add startup <a href="#DinoplusAI">DinoPlusAI</a>.</li>
@@ -132,6 +134,11 @@ table, th, td {
 <a name="Mobileye"></a>
 <div align="center"><h3>Mobileye EyeQ</h3></div>
 > Mobileye is currently developing its fifth generation SoC, the <a href="https://www.mobileye.com/our-technology/evolution-eyeq-chip/">EyeQ®5</a>, to act as the vision central computer performing sensor fusion for Fully Autonomous Driving (Level 5) vehicles that will hit the road in 2020. To meet power consumption and performance targets, EyeQ® SoCs are designed in most advanced VLSI process technology nodes – down to 7nm FinFET in the 5th generation. 
+
+> <a href="https://mp.weixin.qq.com/s/bVn92x2g3sTjPEwagf7dLQ"> 智慧城市 | 英国地理测绘局与Mobileye合作创建数据采集新模式</a>
+<blockquote>
+  <p>2019 年 5 月，Mobileye 与英国国家地理测绘机构——地理测绘局合作，开启名为路网基础设施资产采集试验（RIACT）的项目。通过具备云计算能力的防碰撞系统——Mobileye 8 Connect 来创建精确且实时更新的路网资产GIS图层。</p>
+</blockquote>
 
 <a name="Movidius"></a>
 <div align="center"><h3>Movidius</h3></div>
