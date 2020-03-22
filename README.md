@@ -12,8 +12,8 @@
 
 <font color="Darkred">
 <ul>
-<li>Add news of <a href="#Mobileye">Mobileye</a> and <a href="#Mobileye">Mobileye</a>.</li>
-智慧城市 | 英国地理测绘局与Mobileye合作创建数据采集新模式
+<li>Add news of <a href="#Intel">Intel</a>神经拟态计算系统Pohoiki Springs.</li>
+<li>Add news of <a href="#Mobileye">Mobileye</a>智慧城市 | 英国地理测绘局与Mobileye合作创建数据采集新模式.</li>
 <li>Add startup <a href="#Furiosa">Furiosa AI</a>.</li>
 <li>Add news of <a href="#Graphcore">Graphcore</a> and <a href="#SambaNova">SambaNova</a>.</li>
 <li>Add startup <a href="#DinoplusAI">DinoPlusAI</a>.</li>
@@ -157,6 +157,15 @@ Intel <a href="https://www.altera.com/products/design-software/embedded-software
 Intel's Loihi test chip is the <a href="https://newsroom.intel.com/editorials/intels-new-self-learning-chip-promises-accelerate-artificial-intelligence/">First-of-Its-Kind Self-Learning Chip</a>.
 <blockquote>
   <p>The Loihi research test chip includes digital circuits that mimic the brain’s basic mechanics, making machine learning faster and more efficient while requiring lower compute power. Neuromorphic chip models draw inspiration from how neurons communicate and learn, using spikes and plastic synapses that can be modulated based on timing. This could help computers self-organize and make decisions based on patterns and associations. </p>
+</blockquote>
+
+2020/3/19 [英特尔公布其迄今为止最大规模神经拟态计算系统Pohoiki Springs，包含1亿个神经元](https://mp.weixin.qq.com/s/w8ZOIoTPDVbubiF1nd7s5Q)
+><blockquote>
+  <p>768颗芯片,below 500W，集成在5集成在5台标准服务器大小的机箱中，形成了一个更强大的机架式数据中心系统。
+   Loihi芯片将训练和推理整合到一个芯片上，实现了存储与计算的融合，拥有超级并行性能和异步信号传输能力，并支持多种学习模式的可扩展片上学习能力，即能够一  边运作一边学习。它采用一种新颖的“异步脉冲”方式来计算，也具有大脑般低功耗的特性，与训练人工智能系统的通用计算芯片相比，Loihi芯片的能效提升了1000倍。
+   英特尔在神经拟态计算领域的工作是基于几十年来的研究与合作。这项研究是由加州理工学院Carver Mead教授最先开始的，他以半导体设计的基础性工作而闻名。
+   芯片专业知识、物理学和生物学的结合，为这一创想提供了可行的土壤。
+   著名研究机构Gartner预测，到2025年，神经拟态芯片有望取代GPU，成为先进人工智能部署的主要计算架构。 超低延时、超低功耗，比量子系统先落地</p>
 </blockquote>
 
 <div align="center"><h3> </h3></div>
