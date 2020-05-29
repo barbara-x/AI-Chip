@@ -2,16 +2,30 @@
 <div align="center"><img src="https://github.com/basicmi/Deep-Learning-Processor-List/raw/master/resource/AI-chips.png"></div>
 <br>
 <div align="center">Editor <a href="https://www.linkedin.com/in/shan-tang-27342510/"><strong>S.T.</strong></a>(Linkedin)</div>
-<div align="center"><strong>Welcome to My Wechat Blog <a href="https://mp.weixin.qq.com/cgi-bin/frame?t=notification/index_frame&lang=en_US&token=94386594">Barbara for more AI+ IC+ Car related articles</a></strong></div>
+
 <div align="center"><h1> </h1></div>
 <div align="center"><img src="https://github.com/basicmi/Deep-Learning-Processor-List/raw/master/resource/AI_Chip_Landscape_v0p7.png"></div>
 <div align="center"><h1> </h1></div>
- 
+
+<div align="center"><strong>Welcome to My Wechat Blog <a href="https://mp.weixin.qq.com/cgi-bin/frame?t=notification/index_frame&lang=en_US&token=94386594">Barbara for more AI+ IC+ Car related articles</a></strong></div>
+
+<div align="center"><h2>AI IC in Car </h2></div>
+<HR>
+
+|企业类型|企业名称|
+|:---|:---|
+|OEM |<a href="#BWM">BWM</a>,<a href="#Benz">Benz</a>,<a href="#Audi">Audi</a>,<a href="#大众">大众</a>|
+|Tier1|<a href="#Bosch">Bosch</a>，<a href="#Cruise">Cruise</a>，
+
+
 <div align="center"><h2>Latest updates</h2></div>
 <HR>
 
 <font color="Darkred">
 <ul>
+
+<li> Add news of <a href="#澜起">澜起科技</a></li>
+<li>Add news of <a href="#Apple">Apple</a>Lidar in Ipad pro.</li>
 <li>Add news of <a href="#Intel">Intel</a>神经拟态计算系统Pohoiki Springs.</li>
 <li>Add news of <a href="#Mobileye">Mobileye</a>智慧城市 | 英国地理测绘局与Mobileye合作创建数据采集新模式.</li>
 <li>Add startup <a href="#Furiosa">Furiosa AI</a>.</li>
@@ -135,6 +149,13 @@ table, th, td {
 <div align="center"><h3>Mobileye EyeQ</h3></div>
 > Mobileye is currently developing its fifth generation SoC, the <a href="https://www.mobileye.com/our-technology/evolution-eyeq-chip/">EyeQ®5</a>, to act as the vision central computer performing sensor fusion for Fully Autonomous Driving (Level 5) vehicles that will hit the road in 2020. To meet power consumption and performance targets, EyeQ® SoCs are designed in most advanced VLSI process technology nodes – down to 7nm FinFET in the 5th generation. 
 
+
+[最早于2022年推出机器人出租车](https://auto.gasgoo.com/news/202001/21I70152815C601.shtml)
+>监管和定价:自动驾驶系统成本约为1.5至4万美元之间，对于机器人出租车而言还可以，但是对于普通消费者而言却很贵。如果可以将自动驾驶系统的成本降至约5000美元左右，我们相信我们在2025年可以做到这一点，到时，消费者也会开始对自动驾驶汽车感兴趣。
+
+
+[](https://www.zhihu.com/question/300397248)
+>
 > <a href="https://mp.weixin.qq.com/s/bVn92x2g3sTjPEwagf7dLQ"> 智慧城市 | 英国地理测绘局与Mobileye合作创建数据采集新模式</a>
 <blockquote>
   <p>2019 年 5 月，Mobileye 与英国国家地理测绘机构——地理测绘局合作，开启名为路网基础设施资产采集试验（RIACT）的项目。通过具备云计算能力的防碰撞系统——Mobileye 8 Connect 来创建精确且实时更新的路网资产GIS图层。</p>
@@ -178,6 +199,9 @@ Intel's Loihi test chip is the <a href="https://newsroom.intel.com/editorials/in
   <p>Qualcomm Technologies, Inc., a subsidiary of Qualcomm Incorporated (NASDAQ: QCOM), announced that it is bringing the Company’s artificial intelligence (AI) expertise to the cloud with the Qualcomm® Cloud AI 100. Built from the ground up to meet the explosive demand for AI inference processing in the cloud, the Qualcomm Cloud AI 100 utilizes the Company’s heritage in advanced signal processing and power efficiency. </p>
 </blockquote>
 
+[Snapdragon Ride](https://mp.weixin.qq.com/s/p33h2W-tZpmvRN0gOGpBRg)
+>Snapdragon Ride高速公路自动驾驶系统围绕Snapdragon Ride自动驾驶软件栈和Snapdragon Ride自动驾驶硬件平台两个关键模块进行设计和优化。
+
 
 <a href="https://www.qualcomm.com/products/snapdragon-855-mobile-platform">Snapdragon 855 Mobile Platform</a>
 <blockquote>
@@ -186,9 +210,23 @@ Intel's Loihi test chip is the <a href="https://newsroom.intel.com/editorials/in
 
 <div align="center"><h3> </h3></div>
 <a name="Nvidia"></a>
+
+
 <div align="center"><img src="https://github.com/basicmi/Deep-Learning-Processor-List/raw/master/resource/Nvidia_logo.png" height="50"> </div>
 <div align="center"><h3> </h3></div>
 <div align="center"><h3>GPU</h3></div>
+
+[A100 ](https://mp.weixin.qq.com/s/2a_19orM_00zfs-L30Dsmw)
+五大关键性能：
+- 超过540亿个晶体管，史上最大的7nm处理器,3D 堆叠技术。
+- 第三代Tensor Core AI核心，支持英伟达自创数值格式TF32 (Tensor Float 32) 运算，无需任何代码修改就能让单精度 AI 训练提速20倍，同时支持FP64双精度运算，比起上一代GPU提速了2.5倍。这样一来，NVIDIA 被广泛应用的 Tensor Core 也就变得更灵活，更快，更易于使用了，黄教主如是说。同时支持 TF32 和 BF16 格式，拥有 438 个第三代 Tensor Core，支持虚拟成为 77 个 GPU 来执行不同的任务。
+- 结构稀疏加速，这是一种新的高效技术，主要利用了现有 AI（神经网络）固有的稀疏性来获得更高的性能。
+- 多实例GPU，又名MIG，允许将一个 A100 划分为多达七个独立 GPU，每个GPU都有自己的资源。
+- 第三代 NVLink 技术使GPU之间的高速连接能力加倍，允许多个 A100 服务器可以充当一个巨型GPU。
+- GPU A100 有 2000TOPS 的算力，但其功耗也达到了 800 瓦。大算力大功耗的运算单元在未来很可能不是使用在单车上，而是使用在车路协同，V2X 的路端单元成为核心的运算器。
+
+
+[Orin](https://mp.weixin.qq.com/s/xSbqDxgBtsYyA82yh1IVkw) 10T/5W Orin SOC(Arm)
 
 <strong><a href="https://devblogs.nvidia.com/nvdla/">NVDLA Deep Learning Inference Compiler is Now Open Source</a></strong>
 > With the open-source release of NVDLA’s optimizing compiler on <a href="https://github.com/nvdla/sw/releases/tag/v1.2.0-OC">GitHub</a>, system architects and software teams now have a starting point with the complete source for the world’s first fully open software and hardware inference platform. 
@@ -210,7 +248,13 @@ Nvidia is packing up 8 boards into their <a href="https://www.nvidia.com/en-us/d
 <a href="https://mp.weixin.qq.com/s/tEX4H7OEbZF4dKMI0ZOPmw">Nvidia Volta - 架构看点</a> gives some insights of Volta architecture.<br><br>
 
 <div align="center"><h3>SoC</h3></div>
-On edge, Nvidia provide NVIDIA DRIVE™ PX, <a href="http://www.nvidia.com/object/drive-px.html">The AI Car Computer for Autonomous Driving</a> and JETSON TX1/TX2 MODULE, "<a href="http://www.nvidia.com/object/embedded-systems-dev-kits-modules.html">The embedded platform for autonomous everything</a>".
+On edge, Nvidia provide NVIDIA DRIVE™ PX, <a href="http://www.nvidia.com/object/drive-px.html">The AI Car Computer for Autonomous Driving</a> and JETSON TX1/TX2 MODULE, "<a href="http://www.nvidia.com/object/embedded-systems-dev-kits-modules.html">The embedded platform for autonomous everything</a>".<br>
+
+[**NVIDIA在自动驾驶汽车行业报告中位列榜首**](https://mp.weixin.qq.com/s/LzM4GzduyH5RDoQO226xSw)
+>借助NVIDIA DGX系统和先进的AI学习工具，开发者可以在数据中心中有效地训练深度神经网络，使它们能够在车辆中运行PB级数据。此外，借助车内部署的同一硬件，通过比特位精确的基于云的DRIVE Constellation仿真平台，开发者可以对这些DNN进行测试和验证。
+
+
+
 
 <div align="center"><h3>NVDLA</h3></div>
 Nvidia anouced "XAVIER DLA NOW OPEN SOURCE" on GTC2017. We did not see Early Access verion yet. Hopefully, the general release will be avaliable on Sep. as promised. For more analysis, you may want to read <a href="http://mp.weixin.qq.com/s/XEb5xNeSV_oPs08kDgQg8Q">从Nvidia开源深度学习加速器说起</a>.
@@ -293,6 +337,17 @@ Xilinx provide "<a href="https://www.xilinx.com/applications/megatrends/machine-
 <div align="center"><img src="https://github.com/basicmi/Deep-Learning-Processor-List/raw/master/resource/NXP_logo.png" height="40"></div>
 
 <div align="center"><h3> </h3></div>
+
+[NXP invested Kalray HPC](https://mp.weixin.qq.com/s/RvucYzsDm_vkFpClZtFYbA)
+大规模的并行处理架构可以保证在计算密集型实时任务方面具有强大的性能，过去几年，上述仅仅出现在数据中心应用上的性能要求，被越来越多的应用于车端嵌入式系统，也带动了汽车芯片市场的大变革。NXP宣布对人工智能处理器公司Kalray（一家成立于2008年，早期服务航空航天领域的并行计算芯片厂商）战略投资800万欧元（约合900万美元），加速开发安全、可靠和可伸缩的智能计算处理解决方案。Kalray的MPPA处理器支持ASIL B/C，符合ISO 26262标准。更关键的是能耗可以低至现有解决方案的十分之一，并且由于MPPA的可编程性，用户可以轻松定制和更新。
+
+此前，Kalray已经参与了多家汽车制造商的预研项目，雷诺是其公开披露的一个合作案例。搭载的Kalray处理器采用**台积电的16nm制程，功耗只有20到30W**。
+MPPA©智能处理器，ASIL B/C，符合ISO 26262标准，16nm制程，功耗只有20到30W
+最新的处理器Cooldige，可进行大规模的并行处理，集成了5个计算集群，每个集群有16个核和16个协处理器。QNX或Linux，也可以运行实时操作系统(RTOS)
+第三代Coolidge™处理器的开发，大规模生产计划将于2020年第二季度开始。
+性能是第二代的25倍，扩展了人工智能能力，更容易编程，速度更快。同时，借助NXP处理器的决策能力和相关功能安全经验，在后者的Bluebox车载自动驾驶平台上进行量产落地。
+去年的营收为126.5万欧元，较2018年的77.5万欧元增长63%
+
 
 <p><strong>S32 AUTOMOTIVE PLATFORM</strong>
 <br> <a href="https://www.nxp.com/products/processors-and-microcontrollers/arm-based-processors-and-mcus/s32-automotive-platform:S32">S32 AUTOMOTIVE PLATFORM</a></p>
@@ -503,6 +558,18 @@ In <a href="https://www.anandtech.com/show/11815/huawei-mate-10-and-mate-10-pro-
 
 <div align="center"><h3> </h3></div>
 
+<p><strong><a href="https://mp.weixin.qq.com/s/oR4B0jfxIrr3MyQEEiaFqA">Think Different：Lidar（AR,DTOF）in iPad Pro.</a></strong></p>
+
+>激光雷达的核心价值无疑是“可靠且准确的测距能力”与“三维建图能力”。
+- 车载激光雷达，**大多自动驾驶测试车一开始采用的是机械式激光雷达**,以昂贵(上万$）、体积大,内部因有活动部件而有失稳定性，但却测距(150m)与建模精准而著称。谷歌旗下的Waymo、通用Cruise等致力于研发高级别自动驾驶汽车的企业，视其为必不可少的汽车传感器件。
+- **固态激光雷达（机械式为非固态，稳定性差）** 寻求通过**MEMS、Flash（面阵）、相控阵等不同的技术路径**来解决成本、稳定性以及安全性等诸多车厂关心的问题。<br>
+- LeddarTech、Sense Photonics、Ouster等一众明星激光雷达创业公司都在积极尝试运用不同的技术手段，研发可以过车规的探测距离更长的Flash激光雷达。
+Flash，一种结构和光子发射原理有别于机械式与MEMS的固态激光雷达技术路径。简单说，就是它不靠活动的机械部件，而是靠电子部件发出的数字信号来控制激光发射角度。这种激光雷达的最大优点是内部系统简单，稳定、体积可控以及精度高,可以被做成芯片的形式被嵌入进其他硬件里。便宜，距离短(50米就会受到很多干扰)<br>
+Flash只能说明激光雷达的激光发射形式。要让激光雷达正常测距，**需要包括TOF（Time  of Flight，飞行时间）、三角测距以及FMCW（调频连续波）等深度测距技术**的加持。
+- ITOF系统除了只能在30米内正常工作外，另一个缺点是，不能同时准确分辨附近的两个物体，功耗大。
+- “DTOF可以解决这些问题，但需要集成更为精密的传感器件，兼顾更好的照明控制、数据处理与光学计算能力。低功耗。这类方案有个缺陷是会受到室外强光的干扰，但是根据苹果‘可户外使用’的介绍，他们可能提高了SiPM光电传感器的动态范围以适应户外的强光。
+- 面向苹果供货的VCSEL厂商有艾迈斯（AMS）等企业，最值得注意的是，AMS在2019年9月边推出了全球体积最小的用于测量直接飞行时间(dToF)距离的集成式模块——TMF8801。而SiPM光电传感器生产商，则以Sony等企业为代表。激光雷达要与苹果的镜头、A12Z芯片，以及一系列视觉算法融合得恰到好处，还要考虑到产能以及装配精度……也有低调的创业公司从2017年就开始研发这类Flash激光雷达探测芯片，已经接到了相关订单。飞芯电子已经接受了两轮博世投资，CEO雷述宇向我们透露：“我们正在给车厂和手机做iTOF，下半年将给手机做DTOF。
+
 <p><strong><a href="https://www.apple.com/lae/iphone-xs/a12-bionic/">A12 Bionic The smartest, most powerful chip in a smartphone.</a></strong></p>
 
 <blockquote>
@@ -520,6 +587,7 @@ In <a href="https://www.anandtech.com/show/11815/huawei-mate-10-and-mate-10-pro-
 
 <div align="center"><h3> </h3></div>
 
+>阿里巴巴旗下的平头哥半导体发布了号称业界最强的高性能RISC-V处理器——玄铁910，并宣布开放玄铁910 IP，降低高性能芯片的门槛。玄铁910基于12nm工艺，拥有16核心（四个簇，一个簇四核心），主频2.5GHz，性能高达7.1 Coremark/MHz，比此前业界最好的RISC-V处理器性能高40%以上。(https://mp.weixin.qq.com/s/2hVoTirXYaDup0Un1eCQiA)
 <p>
 <strong><a href="https://medium.com/syncedreview/alibabas-new-ai-chip-can-process-nearly-80k-images-per-second-63412dec22a3">Alibaba’s New AI Chip Can Process Nearly 80K Images Per Second</a></strong></p>
 
@@ -644,6 +712,15 @@ Tencent cloud introduces <a href="https://cloud.tencent.com/product/fpga">FPGA i
 
 <div align="center"><h3> </h3></div>
 
+[特斯拉牌呼吸机](https://mp.weixin.qq.com/s/1Lpu6reA6VMY8G4acFSTUw)
+>用特斯拉的汽车零件来制造呼吸机,其中有Model 3的中控屏幕和计算机系统，也有Model S汽车悬挂系统的零部件。<br>
+[Tesla EE envolution-软件定义汽车](https://mp.weixin.qq.com/s/qBk8efRp9ECXI2Zrmqiy6Q) 
+>Model 3的拓扑:自动驾驶及娱乐控制模块Autopilot & Infotainment Control Module这次彻底接管了所有辅助驾驶相关的sensor，摄像头camera、毫米波雷达Radar，超声波雷达除外，主要用于泊车为低速场景由右车身控制器BCM RH完成-初步判断集成了自动驶入驶出AP（Automatic Parking/Autonomous Pull Out）、热管理、扭矩控制等；事实上，这里正是特斯拉厉害的地方：硬件抽象（硬件和软件的分离）=在电子电气架构方面一向激进、开放的宝马规划的下一代EE架构
+- 即将推出识别交通信号灯和停车标志并做出反应，以及在城市街道中自动辅助驾驶两项功能。
+- 按照原计划在今年年底前推出自动驾驶出租车车队。50万辆以及后续更多的特斯拉“虚拟”车队为其核心的神经网络不断收集数据，并每隔一段时间为用户提供一次新的驾驶体验，并改善性能。
+
+[Tesla向车载超级计算机迈进](https://mp.weixin.qq.com/s/93JiUiMqfhgcf4zf3avLOQ)
+>其终极形态将是超级中央计算机，这其中包括四个关键趋势：计算集中化、软硬件解耦、平台标准化以及功能定制化。商业化落地时间大约在 2025 年。智能汽车的新构架将基于中央计算机-层-区的概念构建。
 <p><strong><a href="https://www.theverge.com/2019/4/22/18511594/tesla-new-self-driving-chip-is-here-and-this-is-your-best-look-yet/">Tesla’s new self-driving chip is here, and this is your best look yet</a></strong></p>
 
 <blockquote>
@@ -678,6 +755,9 @@ Including Robot Vacuum Cleaners, Washing Machines and Refrigerators</p>
 <p><HR></p>
 
 <div align="center"><h3> </h3></div>
+
+[MIPS/ARM IP updates](https://mp.weixin.qq.com/s/2hVoTirXYaDup0Un1eCQiA) ARM 50% IP market, 2018 44.7%,2019 40.8%,营收略有下降，其中专利收入下降了6-7%，但包括实体IP在内的授权收入上升了13%。已经搭载在量产ADAS产品的65%芯片组是基于ARM IP的。数据显示，2019年全球半导体IP市场的总规模约为39.4亿美元，较2018年的37.4亿美元增长5.2%，增速相比上一年出现明显的放缓（2018年同比增长10%）。
+
 
 <p><a name="ARM"></a></p>
 
@@ -718,6 +798,16 @@ ARM also provide a open source <a href="https://developer.arm.com/technologies/c
 
 <div align="center"><h3> </h3></div>
 
+[北汽-Imagination合资公司正式成立](https://mp.weixin.qq.com/s/pw8lxkeNM0zpH0gpYzMGBw)
+北京核芯达科技有限公司是第一家由中国国有整车企业与国际芯片巨头合资成立的汽车芯片设计公司，将专注于面向自动驾驶的应用处理器和面向智能座舱的语音交互芯片研发，为以北汽集团为代表的国内车企在汽车芯片领域提供先进解决方案。基于语音交互术的智能驾仓芯片和面向L3-L5多级别环境感知方案，预计将分别于2021和2022年实现成功流片、量产。
+
+
+[Imagination欲重夺移动GPU市场份额，加大中国区投入](https://www.yicai.com/news/100249954.html)
+>2018年1.05亿美金营收，手机50%-60%，汽车20%-30%，1/3GPU市场（新型市场汽车GPU43%），中国占比10%（35人2019/7）
+- 曾经50% 移动GPU，2017/4 lose Apple，5亿英镑Canyon Bridge（国新）
+- 2018：52.6％的智能手机采用了ARM的GPU( Mali)，33%的智能手机搭载了全球最大手机设计芯片企业高通的SoC(系统芯片)和高通的GPU (Adreno)
+  
+
 <p><a href="https://www.imgtec.com/powervr/vision/">PowerVR Series2NX Neural Network Accelerator</a></p>
 
 <p><strong><a href="https://www.anandtech.com/show/12931/imagination-announces-ax2185-ax2145-powervr-2nx-neural-network-accelerators">Imagination Announces First PowerVR Series2NX Neural Network Accelerator Cores: AX2185 and AX2145</a></strong></p>
@@ -725,6 +815,24 @@ ARM also provide a open source <a href="https://developer.arm.com/technologies/c
 <blockquote>
   <p>the company is announcing the first products in the 2NX NNA family: the higher-performance AX2185 and lower-cost AX2145.</p>
 </blockquote>
+
+<div align="center"><h3> </h3></div>
+
+## RISC-V
+[RISC-V 路在何方](https://mp.weixin.qq.com/s/dwvOigHHj6bpYs8Q33StSg) 
+> - 2010年5月，伯克利大学的Krste Asanović教授和研究生Yunsup Lee和Andrew Waterman启动了RISC-V指令集。
+ RISC-V支持chisel,一种敏捷的硬件构造语言,相比与传统的verilog, 大大降低开发周期.
+- 截止到2020年5月8日，RISC-V基金会共有会员193家，其中来自中国大陆地区的会员约为33家（不完全统计），占比为17%，当中不泛华为和中兴微这样的芯片“前辈”，也有嘉楠云智、比特大陆、睿思芯科和芯来科技这些新玩家。据分析机构Semico Research在去年年底发表的报告，
+- 预计到2025年，市场将总共消费624亿个RISC-V CPU内核，其中预计工业领域将是最大的细分市场，拥有167亿个内核。Semico预测，在包括计算机，消费者，通讯，运输和工业市场在内的细分市场 ，RISC-V CPU内核的复合年增长率（CAGR）在2018年至2025年之间的平均复合年增长率将高达146.2％。
+
+- 首先是性能差距；以RISC-V的领军公司sifive来说,其最新的RISC-V cpu u8系列(2019.10.24发布), 与Arm Cortex-A72相比，是在性能上仅仅是具有可比性(同时提供1.5倍的功耗效率，并且面积只有A72的一半)。需要注意到, 目前sifive官方网站的cpu ip授权只支持到u7系列,还暂未看到u8的身影, 而arm a72则是2016年就已经上市的经过了市场验证的成熟芯片。
+- 其次是工具差距；
+作为RISC-V开发者推崇的chisel语言则在配套工具上还与主流芯片设计和验证工具上有很大差距，chisel没有EDA工具支持。换而言之,通过chisel设计的芯片目前无法直接生成硬件电路,只能通过firrtl编译器,先生成firrtl文件,再生产verilog,才能生成最终的电路.
+- 第三，软件和DSP的差距；李兴仁告诉半导体行业观察记者，芯片的性能离不开针对的软件优化和DSP加速.由于RISC-V刚刚启动(RISC-V架构于2017.7.1合入linux), 无论是编译工具链还是针对图像\音频等处理的dsp生产测试的工具还远未成熟。那就意味着基于底层架构的优化都还有很长的路要走。
+- 最后，市场预期的差距。从数据看来，arm还拥有大部分的市场份额，相比而言RISC-V仍处于起步阶段。
+
+
+
 
 <div align="center"><h3> </h3></div>
 
@@ -781,6 +889,13 @@ ARM also provide a open source <a href="https://developer.arm.com/technologies/c
 <p><HR></p>
 
 <div align="center"><h3> </h3></div>
+
+<a name="澜起科技"></a>
+[澜起科技坚持先做强、再做大的策略](https://mp.weixin.qq.com/s/fk-SZI32-TbjuewVJittaA)
+>澜起科技已经开始做服务器CPU，未来还要做数据中心的AI芯片。
+- 经过十多年的耕耘，我们已经在**内存接口**这个细分领域占有一席之地，自然要扩展产品线，
+- 澜起科技专注在云端和数据中心，所以迈出了一步去服务器CPU领域，
+- 同时我们也开始研究，在数据中心和云端AI计算接下来的需求是什么？芯片应该提供怎样的解决方案？
 
 <p><a name="Cambricon"></a></p>
 
@@ -1009,6 +1124,10 @@ The silicon monster is almost 22 centimeters—roughly 9 inches—on each side, 
 <div align="center"><a href="http://wavecomp.ai/"><img src="https://github.com/basicmi/Deep-Learning-Processor-List/raw/master/resource/Wave_Computing_logo.png" height="40"></a></div>
 
 <div align="center"><h3> </h3></div>
+
+[wave 申请破产](https://mp.weixin.qq.com/s/mgUvg1ufb0LvlNIjJKF8Ig)
+>Wave Computing并非倒闭，只是申请破产保护，进行资产重组，也并未解雇所有员工，但中国区已全部关闭。2018年6月，Wave Computing收购老牌半导体IP公司MIPS，计划通过将它的数据流架构与它的MIPS嵌入式RISC多线程CPU核心和IP相结合，为下一代AI提供了动力。软件可动态重构计算（或者说“软件定义芯片”）,2019/11停止开放
+
 
 <p>Wave’s Compute Appliance is capable to run TensorFlow at 2.9 PetaOPS/sec on their 3RU appliance. Wave refers to their processors at DPUs and an appliance has 16 DPUs. Wave uses processing elements it calls Coarse Grained Reconfigurable Arrays (CGRAs). It is unclear what bit width the 2.9 PetaOPS/s is referring to. Some details can be fund in their  <a href="http://wavecomp.ai/technology/">white paper</a>.<br><br>
 After HotChips 2017, in the next plateform article "<a href="https://www.nextplatform.com/2017/08/23/first-depth-view-wave-computings-dpu-architecture-systems/">First In-Depth View of Wave Computing’s DPU Architecture, Systems</a>", more details were discussed.</p>
