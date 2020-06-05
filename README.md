@@ -903,6 +903,8 @@ ARM also provide a open source <a href="https://developer.arm.com/technologies/c
 
 <div align="center"><h3> </h3></div>
 
+[寒武纪科创版IPO估值342亿](https://mp.weixin.qq.com/s/p5Uv8grjOqY0ArE-z0uDSw)
+
 <p><strong><a href="https://www.chinamoneynetwork.com/2018/05/04/chinese-ai-chip-maker-cambricon-unveils-new-cloud-based-smart-chip">Chinese AI Chip Maker Cambricon Unveils New Cloud-Based Smart Chip</a></strong></p>
 
 <blockquote>
@@ -1137,6 +1139,12 @@ After HotChips 2017, in the next plateform article "<a href="https://www.nextpla
 <p><a name="Graphcore"></a></p>
 
 <div align="center"><a href="https://www.graphcore.ai/"><img src="https://github.com/basicmi/Deep-Learning-Processor-List/raw/master/resource/Graphcore_logo.png" height="70"></a></div>
+
+
+[Microsoft ML scientist run SONIC that recognises breast Xray image of corona-virus on Graphcore, 10x NV traditional chip](https://mp.weixin.qq.com/s/txkBAx2cEso1rbZkLTOAkQ)
+
+>在Intelligent Health 2020峰会上，微软机器学习科学家Sujeeth Bharadwaj展示了他对Graphcore芯片的应用。Bharadwaj使SONIC神经网络在Graphcore芯片上运行，并将其用于识别新冠肺炎患者的胸透图像。
+系统运行结果显示，Graphcore芯片可在30分钟内完成NVIDIA的传统芯片5个小时的训练工作量。10x NV，2nd IPU better than A100
 
 <p><strong><a href="https://techcrunch.com/2020/02/24/graphcore-the-ai-chipmaker-raises-another-150m-at-a-1-95b-valuation/">Graphcore, the AI chipmaker, raises another $150M at a $1.95B valuation</a></strong></p>
 <blockquote>
