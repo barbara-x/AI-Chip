@@ -338,6 +338,9 @@ Xilinx provide "<a href="https://www.xilinx.com/applications/megatrends/machine-
 
 <div align="center"><h3> </h3></div>
 
+[nxp-5nm](https://www.digitimes.com/news/a20200615VL200.html)
+
+
 [NXP invested Kalray HPC](https://mp.weixin.qq.com/s/RvucYzsDm_vkFpClZtFYbA)
 大规模的并行处理架构可以保证在计算密集型实时任务方面具有强大的性能，过去几年，上述仅仅出现在数据中心应用上的性能要求，被越来越多的应用于车端嵌入式系统，也带动了汽车芯片市场的大变革。NXP宣布对人工智能处理器公司Kalray（一家成立于2008年，早期服务航空航天领域的并行计算芯片厂商）战略投资800万欧元（约合900万美元），加速开发安全、可靠和可伸缩的智能计算处理解决方案。Kalray的MPPA处理器支持ASIL B/C，符合ISO 26262标准。更关键的是能耗可以低至现有解决方案的十分之一，并且由于MPPA的可编程性，用户可以轻松定制和更新。
 
@@ -765,6 +768,10 @@ Including Robot Vacuum Cleaners, Washing Machines and Refrigerators</p>
 
 <div align="center"><h3> </h3></div>
 
+
+[arm ex-CEO 谭军 interview](https://mp.weixin.qq.com/s/MLHuPLehqssDcU7NaI23mw)
+
+
 <p><a href="http://pages.arm.com/dynamiq-technology.html">DynamIQ</a> is embedded IP giant's answer to AI age. It may not be a revolutionary design but is important for sure.<br><br>
 ARM also provide a open source <a href="https://developer.arm.com/technologies/compute-library">Compute Library</a> contains a comprehensive collection of software functions implemented for the Arm Cortex-A family of CPU processors and the Arm Mali family of GPUs.<br><br>
 <a href="https://developer.arm.com/products/processors/machine-learning/arm-ml-processor">Arm Machine Learning Processor</a></p>
@@ -928,6 +935,11 @@ ARM also provide a open source <a href="https://developer.arm.com/technologies/c
 
 <div align="center"><h3> </h3></div>
 
+
+[地平线waymo_dataset算法Champion](https://mp.weixin.qq.com/s/1opVArrFk1P8wVUbk214Mw)
+- Waymo开放数据集挑战赛包括5项挑战，地平线在2D追踪、3D检测、3D追踪和域适应四项挑战中获得第一，在2D检测中获得第二。
+- 搭载征程2的长安全新SUV——UNI-T正式上市，地平线车规级芯片征程二代实现首次前装量产。
+
 <p><a href="https://www.reuters.com/article/us-china-tech-semiconductors/chinese-ai-chip-maker-horizon-robotics-raises-600-million-from-sk-hynix-others-idUSKCN1QG0HW">Chinese AI chip maker Horizon Robotics raises $600 million from SK Hynix, others</a></p>
 
 <blockquote>
@@ -1030,6 +1042,12 @@ This nextplatform arcicle ["FPGA Startup Gathers Funding Force for Merged Hypers
   <p>Canaan's <a href="https://kendryte.com/">Kendryte</a> is a series of AI chips which focuses on IoT.</p>
 </blockquote>
 
+## Biren
+
+[壁韧Series A-fund 11亿](https://mp.weixin.qq.com/s/4LeSUoyD6TJo5_AUDqrhjA)
+
+
+
 <p><a name="Enflame"></a></p>
 
 <div align="center"><a href="http://www.enflame-tech.com/"><img src="https://github.com/basicmi/Deep-Learning-Processor-List/raw/master/resource/Enflame_logo.png" height="60"></a></div>
@@ -1080,6 +1098,15 @@ This nextplatform arcicle ["FPGA Startup Gathers Funding Force for Merged Hypers
 <div align="center"><a href="http://bst.ai/#"><img src="https://github.com/basicmi/Deep-Learning-Processor-List/raw/master/resource/Blacksesame_logo.png" height="50"></a></div>
 
 <div align="center"><h3> </h3></div>
+
+
+[HS A1000 Release](https://mp.weixin.qq.com/s/sfgOUAjmnPAXRjU_PRLilQ)
+
+- DynamAI NN引擎的NPU来进行AI加速。
+- 这个NPU内部最多可搭载4个3D卷积MAC阵列、1个2D GEMM阵列，以及1个EDP运算单元和5个DSP，支持4/8/16位多种运算精度，工作频率为1.2GHz。
+- Only A500 comparison disclosed
+- [A500情况，高工点评需更多披露 or 黑芝麻糊](https://mp.weixin.qq.com/s/JYZTgTaKx_6PiQB7J3begg)
+
 
 <p><strong><a href="https://equalocean.com/ai/20190412-black-sesame-technologies-completes-usd-100-million-series-b-financing">Black Sesame Technologies Nearly Completes 100 Million Series B Financing Round</a></strong></p>
 
