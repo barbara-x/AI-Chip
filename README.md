@@ -23,7 +23,7 @@
 
 <font color="Darkred">
 <ul>
-
+<li> Add news of <a href="#Corerain">鲲云科技</a></li>
 <li> Add news of <a href="#澜起">澜起科技</a></li>
 <li>Add news of <a href="#Apple">Apple</a>Lidar in Ipad pro.</li>
 <li>Add news of <a href="#Intel">Intel</a>神经拟态计算系统Pohoiki Springs.</li>
@@ -94,7 +94,9 @@ table, th, td {
   </tr>
   <tr>
     <th><a href="#Startups_in_China">Startups in China</a></th>
-    <td><a href="#Cambricon">Cambricon</a>, <a href="#Horizon_Robotics">Horizon Robotics</a>, <a href="#Bitmain">Bitmain</a>, <a href="#Chipintelli">Chipintelli</a>, <a href="#Thinkforce">Thinkforce</a>, <a href="#Unisound">Unisound</a>, <a href="#AISpeech">AISpeech</a>, <a href="#Rokid">Rokid</a>, <a href="#Nextvpu">NextVPU</a>, <a href="#Canaan">Canaan</a>, <a href="#Enflame">Enflame</a>, <a href="#Eesay">Eesay Tech</a>, <a href="#WITINMEM">WITINMEM</a>, <a href="#Tsingmicro">TSING MICRO</a>,  <a href="#Blacksesame">Black Sesame</a></td><td>15</td>
+    <td><a href="#Cambricon">Cambricon</a>, <a href="#Horizon_Robotics">Horizon Robotics</a>, <a href="#Bitmain">Bitmain</a>, <a href="#Chipintelli">Chipintelli</a>, <a href="#Thinkforce">Thinkforce</a>, <a href="#Unisound">Unisound</a>, <a href="#AISpeech">AISpeech</a>, <a href="#Rokid">Rokid</a>, <a href="#Nextvpu">NextVPU</a>, <a href="#Canaan">Canaan</a>, <a href="#Enflame">Enflame</a>, <a href="#Eesay">Eesay Tech</a>, <a href="#WITINMEM">WITINMEM</a>, <a href="#Tsingmicro">TSING MICRO</a>, 
+    <a href="#Unisoc">Unisoc</a> , 
+    <a href="#Blacksesame">Black Sesame</a></td><td>15</td>
   </tr>
   <tr>  
     <th><a href="#Startups_Worldwide">Startups Worldwide</a></th>
@@ -1047,7 +1049,6 @@ This nextplatform arcicle ["FPGA Startup Gathers Funding Force for Merged Hypers
 [壁韧Series A-fund 11亿](https://mp.weixin.qq.com/s/4LeSUoyD6TJo5_AUDqrhjA)
 
 
-
 <p><a name="Enflame"></a></p>
 
 <div align="center"><a href="http://www.enflame-tech.com/"><img src="https://github.com/basicmi/Deep-Learning-Processor-List/raw/master/resource/Enflame_logo.png" height="60"></a></div>
@@ -1105,7 +1106,8 @@ This nextplatform arcicle ["FPGA Startup Gathers Funding Force for Merged Hypers
 - DynamAI NN引擎的NPU来进行AI加速。
 - 这个NPU内部最多可搭载4个3D卷积MAC阵列、1个2D GEMM阵列，以及1个EDP运算单元和5个DSP，支持4/8/16位多种运算精度，工作频率为1.2GHz。
 - Only A500 comparison disclosed
-- [A500情况，高工点评需更多披露 or 黑芝麻糊](https://mp.weixin.qq.com/s/JYZTgTaKx_6PiQB7J3begg)
+
+
 
 
 <p><strong><a href="https://equalocean.com/ai/20190412-black-sesame-technologies-completes-usd-100-million-series-b-financing">Black Sesame Technologies Nearly Completes 100 Million Series B Financing Round</a></strong></p>
@@ -1113,6 +1115,30 @@ This nextplatform arcicle ["FPGA Startup Gathers Funding Force for Merged Hypers
 <blockquote>
   <p>Black Sesame Technologies (黑芝麻智能科技) has nearly completed its 100 million Series B Financing round which will be used to expand cooperation with OEMs, accelerate mass production, reference design development of autopilot controllers, and software-vehicle integration.</p>
 </blockquote>
+
+<p><a name="Unisoc"></a></p>
+
+ - 展锐虎贲T710基于四颗主频2GHz的Cortex-A75核心＋四颗1.8GHz的Cortex-A55核心，GPU未知，在AI方面则是集成了独立的NPU内核，支持运行FP16、INT8、INT4等多种数据位宽的AI算法。
+
+- 虎贲T710开发板基于虎贲T710芯片平台，符合96board开放规范。开发板提供了USB、GPIO、 PCIe等丰富的外部接口，利用96board成熟的开发生态，可以快速开发和验证产品原型。同时，虎贲T710为开发板提供了强大的算力，并提供2G/3G/4G以及Wi-Fi等无线网络连接能力。
+
+ - 另外，虎贲T710也可以搭配春藤510平台，以提供5G连接能力，实现多种产品形态，当前已经在智能医疗、智能零售等产品中得到了应用验证。软件平台支持Android、Ubuntu、Yocto等多种平台，未来还会提供Debian、AGL、ROS等多种OS的支持，进一步加强对不同领域产品的支持，为用户提供一个灵活成熟的产品开发平台。
+
+
+<p><a name="Corerain"></a></p>
+
+[中国AI芯片新秀，造出全球首款量产数据流AI芯](https://mp.weixin.qq.com/s/igtsOlmGWo5UEkaADndtlQ)
+
+- 去年6月，鲲云科技成为英特尔全球旗舰FPGA合作伙伴，并与浪潮信息达成元脑计划战略合作，在AI计算加速方面开展深入合作
+- 产品发布：
+  - 2020年6月X3边缘推理卡，8月云端X9
+  - CAISA 3.0相比对手Wavecomputing， Groq（数据流）更快商用落地，1.0/2.0 FPGA
+  - 28nm，INT8 10.9T，算力利用率98.4%
+  - 支持主流网络框架Caffe，Tensorflow，ONNX
+  - 支持算法模型：VGG，Resnet,Yolo
+  - 工业级温度范围：-40~125°C
+
+
 
 
 <div align="center"><h3> </h3></div>
