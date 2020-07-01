@@ -289,6 +289,11 @@ The soon to be released <a href="https://instinct.radeon.com/en-us/product/mi/ra
 <div align="center"><img src="https://github.com/basicmi/Deep-Learning-Processor-List/raw/master/resource/Xilinx_logo.png" height="35"></div>
 <div align="center"><h3> </h3></div>
 
+
+
+[xilinx makes mipi csi/dsi （camera/display serial interface）ip bundled with IDE in Xilinx Vivado](https://hackaday.com/2020/06/09/xilinx-makes-mipi-csi-and-dsi-controller-ip-blocks-free-to-use-with-vivado/)
+
+
 <strong><a href="https://www.xilinx.com/news/press/2018/xilinx-launches-the-world-s-fastest-data-center-and-ai-accelerator-cards.html">Xilinx Launches the World's Fastest Data Center and AI Accelerator Cards</a></strong>
 > Xilinx launched [Alveo](https://www.xilinx.com/alveo), a portfolio of powerful accelerator cards designed to dramatically increase performance in industry-standard servers across cloud and on-premise data centers. 
 
