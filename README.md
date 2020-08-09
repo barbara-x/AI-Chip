@@ -1942,6 +1942,16 @@ After HotChips 2017, in the next plateform article "<a href="https://www.nextpla
 1. <a href="https://dawn.cs.stanford.edu/benchmark/index.html">DAWNBench:An End-to-End Deep Learning Benchmark and Competition Image Classification (ImageNet)</a><br>
 2. <a href="https://github.com/rdadolf/fathom">Fathom:Reference workloads for modern deep learning methods</a><br>
 3. <a href="https://mlperf.org/">MLPerf:A broad ML benchmark suite for measuring performance of ML software frameworks, ML hardware accelerators, and ML cloud platforms</a>. You can find MLPerf v0.5 results <a href="https://mlperf.org/results/">here.</a>. <strong><a href="https://mlperf.org/inference-overview/">MLPerf Inference Benchmarks is here</a></strong>.<br>
+[A100 全部8项MLPerf基准测试中展现了最快的市售商用产品性能](https://mp.weixin.qq.com/s/yA8FMNmPSADqTviTZ8m7Xg)
+- TPU v4的性能较TPU v3平均提升2.7倍
+- [MLPerf训练基准测试结果链接](https://www.mlperf.org/training-results-0-7)
+- 当前MLPerf训练基准测试包含图像分类、图像分割、目标检测、翻译等8种机器学习模型，
+最新版本的MLPerf包括两个新的测试BERT、DLRM和一个大幅修订的测试MiniGo。
+前沿对话式AI模型BERT是现有最复杂的神经网络模型之一，常被用作翻译、搜索、文本理解、问答等任务。
+推荐系统是日益普及的一项AI任务，深度学习推荐模型DLRM常被用于在线购物推荐、搜索、社会媒体内容排序等任务。
+强化学习模型MiniGo使用了全尺寸19x19围棋版本，是本轮最复杂的测试，内容涵盖从游戏到训练的多项操作。
+
+
 4. <a href="https://aimatrix.ai/en-us/index.html">AI Matrix</a><br>
 5. <a href="http://ai-benchmark.com/index.html">AI-Benchmark</a><br>
 6. <a href="https://github.com/AIIABenchmark/AIIA-DNN-benchmark">AIIABenchmark</a><br>
