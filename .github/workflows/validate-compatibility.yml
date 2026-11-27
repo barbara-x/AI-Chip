@@ -106,6 +106,13 @@ jobs:
           python3 -m unittest discover -s tests -p "test_hardware_counter_mappings.py"
           python3 -m unittest discover -s tests -p "test_hardware_metric_derivation.py"
           python3 -m unittest discover -s tests -p "test_hardware_performance_diagnosis.py"
+          python3 -m unittest discover -s tests -p "test_performance_experiment_plan.py"
+          python3 -m unittest discover -s tests -p "test_performance_evidence_review.py"
+          python3 -m unittest discover -s tests -p "test_performance_review_ledger.py"
+          python3 -m unittest discover -s tests -p "test_performance_knowledge_extraction.py"
+          python3 -m unittest discover -s tests -p "test_performance_knowledge_applicability.py"
+          python3 -m unittest discover -s tests -p "test_performance_knowledge_retrieval.py"
+          python3 -m unittest discover -s tests -p "test_performance_hypothesis_comparison.py"
           python3 -m unittest discover -s tests -p "test_gpu_execution_efficiency.py"
           python3 -m unittest discover -s tests -p "test_runtime_hardware_alignment.py"
           python3 -m unittest discover -s tests -p "test_runtime_phase_decomposition.py"
@@ -166,6 +173,26 @@ jobs:
           test -s _site/assets/js/benchmark-results.js
           test -s _site/results/index.html
           test -s _site/concurrency/index.html
+          test -s _site/coverage/index.html
+          test -s _site/performance/index.html
+          test -s _site/cross-benchmark/index.html
+          test -s _site/diagnosis/index.html
+          test -s _site/performance-evidence/index.html
+          test -s _site/assets/js/performance-evidence-workbench.js
+          test -s _site/assets/css/performance-evidence-workbench.css
+          test -s _site/assets/js/performance-diagnosis.js
+          test -s _site/assets/css/performance-diagnosis.css
+          test -s docs/hardware-performance-diagnosis.md
+          test -s _site/assets/js/cross-benchmark.js
+          test -s _site/assets/css/cross-benchmark.css
+          test -s docs/cross-benchmark-evidence.md
+          test -s _site/recipe-review/index.html
+          test -s _site/assets/js/recipe-review.js
+          test -s _site/assets/css/recipe-review.css
+          test -s _site/assets/js/performance-workspace.js
+          test -s _site/assets/css/performance-workspace.css
+          test -s _site/assets/js/inferencex-coverage.js
+          test -s _site/assets/css/inferencex-coverage.css
           test -s _site/assets/js/concurrency-explorer.js
           test -s _site/data/benchmark-results.json
           test -s _site/data/benchmark-results.json.gz

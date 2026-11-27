@@ -38,13 +38,183 @@ const { chromium } = require("playwright");
     }
   };
 
-  const routes = ["/", "/directory/", "/products/", "/software-ecosystem/", "/compatibility/", "/workloads/", "/model-support/", "/evidence-review/", "/database-integration/", "/product-integration/", "/benchmark-integration/", "/intelligence-operations/", "/benchmarks/", "/results/", "/concurrency/"];
+  const routes = ["/", "/directory/", "/products/", "/software-ecosystem/", "/compatibility/", "/workloads/", "/model-support/", "/evidence-review/", "/database-integration/", "/product-integration/", "/benchmark-integration/", "/intelligence-operations/", "/benchmarks/", "/results/", "/concurrency/", "/coverage/", "/performance/", "/recipe-review/", "/cross-benchmark/", "/diagnosis/", "/performance-evidence/"];
   for (const route of routes) {
     const response = await page.goto(base + route, { waitUntil: "networkidle" });
     if (!response || !response.ok()) throw new Error("Route failed: " + route);
     await page.locator("header.site-header").waitFor();
     await page.locator("main#main-content").waitFor();
   }
+
+  // Performance Evidence Workbench: local file loading, identity matching and decision-history rendering.
+  const peRecord = {id:"pe-fixture",model:"Fixture Model"};
+  const pePlan = {schema_version:"1.0",plan_id:"plan-fixture",record_context:{record_id:"pe-fixture"},experiment_count:1,experiments:[{experiment_id:"exp-fixture",title:"Decode TP experiment",mechanism:"runtime_scheduling_or_queueing",hypothesis:"Queueing contributes to the observed latency.",observed_signal:"Elevated p99 TPOT",baseline:{source_record_id:"pe-fixture"}}]};
+  const peSubmission = {schema_version:"1.0",plan_id:"plan-fixture",experiment_id:"exp-fixture",protocol:{parameter:"decode_tp",baseline_value:4,treatment_value:8,primary_metric:{key:"median_tpot",unit:"s"}}};
+  const hashFixture = "a".repeat(64);
+  const peReview = {schema_version:"1.0",report_type:"performance_evidence_review",record_id:"pe-fixture",plan_id:"plan-fixture",experiment_id:"exp-fixture",record_sha256:hashFixture,plan_sha256:"b".repeat(64),submission_sha256:"c".repeat(64),review_status:"needs_review",hypothesis_verdict:"undetermined",review_blockers:[],runs:[{run_id:"base-1",condition:"baseline",status:"valid",value:0.12,unit:"s",source_url:"https://example.org/base"},{run_id:"treat-1",condition:"treatment",status:"valid",value:0.1,unit:"s",source_url:"https://example.org/treat"}],statistics:{baseline:{valid_runs:1,min:0.12,max:0.12,median:0.12},treatment:{valid_runs:1,min:0.1,max:0.1,median:0.1}},relative_improvement_percent:16.67,effect_threshold_met:true};
+  peSubmission.record_sha256=hashFixture;
+  peSubmission.plan_sha256="b".repeat(64);
+  peSubmission.submission_sha256="c".repeat(64);
+  const peLedger = {schema_version:"1.0",entries:[{evidence_identity:{record_id:"pe-fixture",plan_id:"plan-fixture",experiment_id:"exp-fixture",submission_sha256:"c".repeat(64)},decision:{decision_id:"decision-1",verdict:"inconclusive",reviewer:"Fixture reviewer",reviewed_at:"2026-11-26T00:00:00Z",rationale:"Synthetic review only.",applicability:"Fixture only",limitations:"Not production evidence."},previous_entry_sha256:null,entry_sha256:"d".repeat(64)}]};
+  await page.goto(base+"/performance-evidence/",{waitUntil:"networkidle"});
+  const uploadJson = async (selector,name,value) => page.locator(selector).setInputFiles({name,mimeType:"application/json",buffer:Buffer.from(JSON.stringify(value))});
+  await uploadJson("[data-pe-record]","record.json",peRecord);
+  await uploadJson("[data-pe-plan]","plan.json",pePlan);
+  await uploadJson("[data-pe-submission]","submission.json",peSubmission);
+  await uploadJson("[data-pe-review]","review.json",peReview);
+  await uploadJson("[data-pe-ledger]","ledger.json",peLedger);
+  if(await page.locator("[data-pe-content]").isHidden())throw new Error("Performance Evidence Workbench did not render a matched evidence chain");
+  if((await page.locator("[data-pe-stat='runs']").textContent()).trim()!=="2")throw new Error("Performance Evidence Workbench run count mismatch");
+  if(!(await page.locator("[data-pe-decision-list]").textContent()).includes("inconclusive"))throw new Error("Performance Evidence Workbench did not render human decision history");
+  const badSubmission={...peSubmission,plan_id:"wrong-plan"};
+  await uploadJson("[data-pe-submission]","bad-submission.json",badSubmission);
+  if(!(await page.locator("[data-pe-status]").textContent()).includes("do not refer to the same evidence chain"))throw new Error("Performance Evidence Workbench accepted mismatched evidence identity");
+  await page.locator("[data-pe-reset]").click();
+  if(!(await page.locator("[data-pe-status]").textContent()).includes("Choose the five evidence files"))throw new Error("Performance Evidence Workbench reset failed");
+
+  // InferenceX coverage explorer: missing metadata remains visible and source-linked.
+  const coverageFixture = (id, hardware, recipe) => ({
+    id, source_id:"inferencex", source_class:"third_party_public_benchmark",
+    evidence_level:"publisher_published_observation", benchmark_suite:"SemiAnalysis InferenceX",
+    benchmark_version:"2026.1", model:"model-a", model_display_name:"Model A",
+    scenario:"single_turn",division:"third_party",availability:"published",
+    weight_data_types:"FP8",inferred:false,errors:0,system_type:"datacenter",
+    system:{hardware,physical_prefill_gpus:0,physical_decode_gpus:8,is_multinode:false,workers:[]},
+    software:{framework:"vllm",recipe_fingerprint:recipe},
+    configuration:{decode_tp:8,workflow_run_id:id},
+    workload:{benchmark_type:"single_turn",isl:1024,osl:256,concurrency:32,precision:"FP8",speculative_method:"none",disaggregated:false},
+    normalized_metrics:{output_throughput_per_gpu:{value:100,unit:"tok/s/GPU",family:"throughput",direction:"higher"}},
+    source_url:"https://example.org/"+id
+  });
+  await page.route("**/data/benchmark-results.json.gz", route=>route.fulfill({
+    status:200,contentType:"application/json",body:JSON.stringify({records:[
+      coverageFixture("coverage-a","GPU A","recipe-a"),
+      coverageFixture("coverage-b",null,null)
+    ],database_version:"test-v1",last_updated:"2026-11-25"})
+  }));
+  await page.goto(base+"/coverage/",{waitUntil:"networkidle"});
+  await page.locator("[data-coverage-load]").waitFor({state:"hidden",timeout:15000});
+  const coverageTotal=(await page.locator("[data-coverage-stat='records']").textContent()).trim();
+  if(coverageTotal!=="2")throw Error("Coverage explorer record count mismatch: "+coverageTotal+"; error="+await page.locator("[data-coverage-error]").textContent()+"; root="+await page.locator("[data-coverage-explorer]").count());
+  await page.locator("[data-coverage-dimension]").selectOption("recipe");
+  if(!(await page.locator("[data-coverage-dimension-summary]").textContent()).includes("1 / 2 records"))throw Error("Coverage dimension percentage mismatch");
+  await page.locator("[data-coverage-gap-field]").selectOption("hardware");
+  if(!(await page.locator("[data-coverage-gap-count]").textContent()).includes("1 records missing Hardware"))throw Error("Coverage gap filter mismatch");
+  if(await page.locator("[data-coverage-gap-rows] a").count()!==1)throw Error("Coverage gap record source link missing");
+  // Performance Intelligence Workspace: filter the same published registry fixture.
+  await page.goto(base+"/performance/",{waitUntil:"networkidle"});
+  await page.locator("[data-pw-load]").waitFor({state:"hidden",timeout:15000});
+  if((await page.locator("[data-pw-stat='records']").textContent()).trim()!=="2")throw Error("Performance workspace registry count mismatch");
+  await page.locator("[data-pw-filter='model']").selectOption({label:"Model A"});
+  await page.locator("[data-pw-filter='hardware']").selectOption({label:"GPU A"});
+  if(!(await page.locator("[data-pw-filter-status]").textContent()).includes("Showing 1 of 2"))throw Error("Performance workspace filters did not narrow the registry");
+  await page.locator("[data-pw-metric]").selectOption("output_throughput_per_gpu");
+  if(await page.locator("[data-pw-observations] tr").count()!==1)throw Error("Performance workspace metric observation missing");
+  // Recipe evidence review: one axis changes, other stable configuration remains fixed.
+  const recipeFixture = (id, degree, fingerprint) => ({
+    id,source_id:"inferencex",source_class:"third_party_public_benchmark",
+    evidence_level:"publisher_published_observation",benchmark_suite:"SemiAnalysis InferenceX",
+    benchmark_version:"2026.1",model:"model-r",model_display_name:"Model R",
+    scenario:"single_turn",division:"third_party",availability:"published",
+    weight_data_types:"FP8",inferred:false,errors:0,system_type:"datacenter",
+    system:{hardware:"GPU R",physical_prefill_gpus:0,physical_decode_gpus:8,is_multinode:false,workers:[]},
+    software:{framework:"vllm",recipe_fingerprint:fingerprint},
+    configuration:{decode_tp:degree,decode_ep:1},
+    workload:{benchmark_type:"single_turn",isl:1024,osl:256,concurrency:32,precision:"FP8",speculative_method:"disabled",disaggregated:false},
+    normalized_metrics:{output_throughput_per_gpu:{value:100*degree,unit:"tok/s/GPU",family:"throughput",direction:"higher"}},
+    source_url:"https://example.org/"+id
+  });
+  await page.route("**/data/benchmark-results.json.gz", route=>route.fulfill({
+    status:200,contentType:"application/json",body:JSON.stringify({records:[
+      recipeFixture("recipe-a",4,"fingerprint-a"),recipeFixture("recipe-b",8,"fingerprint-b")
+    ]})
+  }));
+  await page.goto(base+"/recipe-review/",{waitUntil:"networkidle"});
+  await page.locator("[data-rr-load]").waitFor({state:"hidden",timeout:15000});
+  if((await page.locator("[data-rr-stat='groups']").textContent()).trim()!=="1")throw Error("Recipe review candidate grouping mismatch: groups="+(await page.locator("[data-rr-stat='groups']").textContent())+"; status="+await page.locator("[data-rr-status]").textContent()+"; error="+await page.locator("[data-rr-error]").textContent());
+  if(await page.locator("[data-rr-groups] .rr-group").count()!==1)throw Error("Recipe review candidate group missing");
+  if(await page.locator("[data-rr-groups] tbody tr").count()!==2)throw Error("Recipe review observations missing");
+  await page.locator("[data-rr-axis]").selectOption("decode_tp");
+  if(await page.locator("[data-rr-groups] .rr-group").count()!==1)throw Error("Recipe review axis filter failed");
+  // Cross-benchmark crosswalk: exact signature, same-dimensional, and unit-review links.
+  const crossFixture = (id,suite,key,unit,label,sourceMetric) => ({
+    id,source_id:id,source_class:"third_party_public_benchmark",evidence_level:"publisher_published_observation",
+    benchmark_suite:suite,benchmark_version:"1.0",model:"Model X",scenario:"offline",division:"closed",
+    availability:"published",weight_data_types:"FP8",inferred:false,errors:0,
+    normalized_metrics:{[key]:{value:123,unit,family:"throughput",direction:"higher",label,source_metric:sourceMetric}},
+    source_url:"https://example.org/"+id
+  });
+  await page.route("**/data/benchmark-results.json.gz", route=>route.fulfill({
+    status:200,contentType:"application/json",body:JSON.stringify({records:[
+      crossFixture("cross-a","Suite Alpha","output_throughput","token/s","Output throughput","tokens_per_second"),
+      crossFixture("cross-b","Suite Beta","output_throughput","token/s","Generated tokens per second","tokens_per_second"),
+      crossFixture("cross-c","Suite Gamma","throughput_rate","token/s","Token generation rate","tokens_per_second"),
+      crossFixture("cross-d","Suite Delta","output_rate","k token/s","Output rate","output_rate")
+    ]})
+  }));
+  await page.goto(base+"/cross-benchmark/",{waitUntil:"networkidle"});
+  await page.locator("[data-cb-load]").waitFor({state:"hidden",timeout:15000});
+  if((await page.locator("[data-cb-stat='suites']").textContent()).trim()!=="4")throw Error("Cross-benchmark suite count mismatch");
+  if((await page.locator("[data-cb-stat='candidates']").textContent()).trim()!=="6")throw Error("Cross-benchmark candidate count mismatch");
+  await page.locator("[data-cb-relation]").selectOption("same_signature");
+  if(await page.locator("[data-cb-candidates] .cb-candidate").count()!==1)throw Error("Exact normalized metric signature mapping mismatch");
+  await page.locator("[data-cb-candidates] .cb-inspect-button").first().click();
+  if(!(await page.locator("[data-cb-inspector]").textContent()).includes("tokens_per_second"))throw Error("Cross-benchmark metric definition inspector omitted source metric");
+  if(await page.locator("[data-cb-inspector] a").count()!==1)throw Error("Cross-benchmark inspector omitted source traceability");
+  await page.locator("[data-cb-relation]").selectOption("same_dimension");
+  if(await page.locator("[data-cb-candidates] .cb-candidate").count()!==2)throw Error("Same-dimension candidate classification mismatch");
+  await page.locator("[data-cb-relation]").selectOption("unit_review");
+  if(await page.locator("[data-cb-candidates] .cb-candidate").count()!==3)throw Error("Unit-review candidate classification mismatch");
+  // Evidence-based diagnosis workbench: observed signals and missing profiler/trace inputs stay distinct.
+  const diagnosisRecord = (id, withEvidence) => ({
+    id,source_id:"inferencex",source_class:"third_party_public_benchmark",
+    evidence_level:"publisher_published_observation",benchmark_suite:"SemiAnalysis InferenceX",
+    benchmark_version:"2026.1",model:"model-d",model_display_name:"Model Diagnosis",
+    scenario:"single_turn",division:"third_party",availability:"published",weight_data_types:"FP8",
+    inferred:false,errors:0,system:{hardware:"GPU D",physical_decode_gpus:8},
+    software:{framework:"vllm"},source_url:"https://example.org/"+id,
+    normalized_metrics:{
+      p99_ttft:{value:1.2,unit:"s",family:"latency",direction:"lower",source_metric:"p99_ttft"},
+      p99_tpot:{value:0.12,unit:"s",family:"latency",direction:"lower",source_metric:"p99_tpot"},
+      output_throughput_per_gpu:{value:120,unit:"tok/s/GPU",family:"throughput",direction:"higher",source_metric:"output_tput"}
+    },
+    ...(withEvidence?{
+      hardware_evidence:{
+        collector:{name:"fixture-profiler",type:"profiler"},
+        system_scope:{scope_type:"per_gpu",device_count:1,device_model:"GPU D"},
+        sampling:{started_at:"2026-11-26T00:00:00Z",ended_at:"2026-11-26T00:00:10Z",sample_interval_ms:1000,sample_count:10},
+        provenance:{source_type:"profiler_export",source_url:"https://example.org/profiler.json",collected_at:"2026-11-26T00:00:11Z"},
+        metrics:[
+          {metric_id:"compute_flop_count",value:1000,unit:"FLOP",measurement_kind:"hardware_counter",aggregation:"sum",scope:"per_gpu",source_name:"flop"},
+          {metric_id:"dram_read_bytes",value:500,unit:"byte",measurement_kind:"hardware_counter",aggregation:"sum",scope:"per_gpu",source_name:"dram_read"},
+          {metric_id:"throttle_active_pct",value:0,unit:"%",measurement_kind:"telemetry",aggregation:"mean",scope:"per_gpu",source_name:"throttle"}
+        ]
+      },
+      runtime_trace:{
+        collector:{name:"fixture-trace",type:"runtime_trace"},clock_domain:"utc_wall_clock",
+        sampling:{started_at:"2026-11-26T00:00:00Z",ended_at:"2026-11-26T00:00:10Z"},
+        provenance:{source_type:"runtime_trace_export",source_url:"https://example.org/trace.json",collected_at:"2026-11-26T00:00:11Z"},
+        events:[{event_id:"q1",name:"queue",category:"queue_wait",started_at:"2026-11-26T00:00:01Z",ended_at:"2026-11-26T00:00:02Z"}]
+      }
+    }:{})
+  });
+  await page.route("**/data/benchmark-results.json.gz", route=>route.fulfill({
+    status:200,contentType:"application/json",body:JSON.stringify({records:[diagnosisRecord("diagnosis-a",true),diagnosisRecord("diagnosis-b",false)]})
+  }));
+  await page.goto(base+"/diagnosis/",{waitUntil:"networkidle"});
+  await page.locator("[data-dw-load]").waitFor({state:"hidden",timeout:15000});
+  if((await page.locator("[data-dw-stat='records']").textContent()).trim()!=="2")throw Error("Diagnosis workbench record count mismatch");
+  if((await page.locator("[data-dw-stat='hardware']").textContent()).trim()!=="1")throw Error("Diagnosis profiler evidence coverage count mismatch");
+  if((await page.locator("[data-dw-stat='traces']").textContent()).trim()!=="1")throw Error("Diagnosis runtime trace coverage count mismatch");
+  if((await page.locator("[data-dw-stat='serving']").textContent()).trim()!=="2")throw Error("Diagnosis serving metric coverage count mismatch");
+  if(await page.locator("[data-dw-runtime] tbody tr").count()!==3)throw Error("Diagnosis serving metrics were not rendered");
+  if(!(await page.locator("[data-dw-evidence]").textContent()).includes("compute_flop_count"))throw Error("Diagnosis profiler metric evidence missing");
+  if(!(await page.locator("[data-dw-mechanisms]").textContent()).includes("theoretical_peak_flops"))throw Error("Diagnosis missing-input checklist did not identify absent roofline inputs");
+  if(!(await page.locator("[data-dw-mechanisms]").textContent()).includes("No bottleneck verdict is generated"))throw Error("Diagnosis workbench must preserve no-automatic-verdict guardrail");
+  await page.locator("[data-dw-record]").selectOption("diagnosis-b");
+  if(!(await page.locator("[data-dw-provenance]").textContent()).includes("No profiler or runtime trace provenance"))throw Error("Missing evidence was not represented as unknown");
+  await page.unroute("**/data/benchmark-results.json.gz");
+
 
   // Concurrency explorer: deterministic fixture through the production fetch/render path.
   const sweepFixture = (id, concurrency, value, recipe="recipe-a") => ({
@@ -993,7 +1163,7 @@ const { chromium } = require("playwright");
       }, model: "dsr1",
       model_display_name: "DeepSeek-R1-0528", scenario: "single_turn", availability: "published",
       division: "third_party", system_type: "datacenter", benchmark_suite: "SemiAnalysis InferenceX",
-      benchmark_version: null, publication_date: "2026-11-10", inferred: false,
+      benchmark_version: null, publication_date: "2026-11-10", inferred: false, errors: 0,
       result_value: null, result_unit: "", accuracy_text: "", source_url: "https://inferencex.semianalysis.com/",
       normalized_metrics: {
         output_throughput_per_gpu: { value, unit: "tok/s/GPU", label: "Output throughput", direction: "higher", family: "throughput" },
@@ -1306,6 +1476,12 @@ const { chromium } = require("playwright");
       !frontierIds.includes("fixture-2") || frontierIds.includes("fixture-0")) {
     throw new Error("Pareto frontier should retain the two non-dominated configurations and exclude fixture-0: " + frontierIds.join(", "));
   }
+  const dominanceAudit = page.locator("[data-pareto-dominance-audit]");
+  const dominatedObservation = dominanceAudit.locator("[data-dominated-record='fixture-0']");
+  if(await dominatedObservation.count()!==1)throw Error("Missing dominance witness for fixture-0");
+  if(await dominatedObservation.getAttribute("data-dominating-record")!=="fixture-2")throw Error("Unexpected non-dominated witness");
+  if(await dominatedObservation.locator("li").count()!==3)throw Error("Dominance explanation must cover all three metrics");
+  if(await dominanceAudit.locator("[data-dominated-record='fixture-1'], [data-dominated-record='fixture-2']").count())throw Error("Non-dominated records incorrectly marked dominated");
   const paretoPlot = page.locator("[data-pareto-plot]");
   if (await paretoPlot.locator(".benchmark-frontier-point").count() !== 3 ||
       await paretoPlot.locator(".benchmark-frontier-point.is-pareto").count() !== 2) {
